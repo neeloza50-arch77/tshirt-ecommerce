@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEROFORGE — Suit Up. The Hero Collection.</title>
+  <meta name="description" content="HEROFORGE: premium superhero-inspired T-shirts with bold original graphics. Demo store — not official merchandise.">
+  <meta name="theme-color" content="#060607">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body data-page="home">
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="wrap">
+      <svg viewBox="0 0 84 96" fill="none" stroke="#e62429" stroke-width="3" stroke-linejoin="round"><path id="plShield" d="M4 6h76v34c0 24-15 40-38 50C19 80 4 64 4 40z"/><path id="plMark" d="M24 26h36M24 42h36M36 58h12" stroke="#fff"/></svg>
+      <div class="name">HEROFORGE</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="stripe"></div>
+      <div id="heroGL" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-hero>The Hero Collection · AW26</span>
+          <h1 data-lines data-now><span class="metal">Suit</span><br><span class="metal-red">Up.</span></h1>
+          <p class="lead" data-hero>Bold original superhero graphics on heavyweight cotton. Armor, shields, webs and storms — designed in-house, built to be worn loud.</p>
+          <div class="cta" data-hero>
+            <a href="shop.html" class="btn btn-red">Shop the collection <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+            <a href="#characters" class="btn btn-ghost">Meet the heroes</a>
+          </div>
+          <div class="hero-stats" data-hero><div><b id="statP">92</b>Designs</div><div><b id="statC">11</b>Heroes</div><div><b>100%</b>Original art</div></div>
+        </div>
+        <div class="hero-visual" id="heroVisual">
+          <div class="shield-fallback" id="shieldFb"></div>
+          <a class="hv-card hv-b" id="hvB" href="#"><img alt="" width="270" height="338"></a>
+          <a class="hv-card hv-a" id="hvA" href="#"><img alt="" width="270" height="338"></a>
+          <a class="hv-card hv-c" id="hvC" href="#"><img alt="" width="210" height="263"></a>
+        </div>
+      </div>
+      <div class="scroll-cue" data-hero>Scroll<i></i></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <!-- CHARACTERS -->
+    <section class="section" id="characters">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Choose your hero</span><h2 class="display">The Roster</h2></div>
+          <p>Eleven original heroes, each with their own line of tees — from minimal emblems to full cinematic prints.</p>
+        </div>
+        <div class="char-grid" id="charGrid"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="section" id="featured" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Featured</span><h2 class="display">Power Picks</h2></div>
+          <a class="link-u" href="shop.html?s=featured">View all featured <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid" id="featGrid"></div>
+      </div>
+    </section>
+
+    <!-- 3D SHOWCASE -->
+    <section class="section showcase" id="showcase">
+      <div class="container showcase-grid">
+        <div>
+          <span class="eyebrow" data-reveal>3D Showcase</span>
+          <h2 class="display" data-lines>See it<br><span class="metal-red">from every angle</span></h2>
+          <p data-reveal>Drag to spin the tee and check the front and back prints before you buy. Pick a hero below.</p>
+          <div class="sc-chips" id="scChips" data-reveal></div>
+          <div data-reveal><a id="scLink" class="btn btn-red" href="#">View this tee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+        </div>
+        <div class="stage3d" id="showStage" data-reveal><div class="fallback" id="showFallback"><img alt="" width="600" height="750"></div><div class="hint">Drag to rotate</div></div>
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="section" id="new" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Just dropped</span><h2 class="display">New Arrivals</h2></div>
+          <a class="link-u" href="shop.html?s=new">Shop new arrivals <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="strip" id="newStrip"></div>
+      </div>
+    </section>
+
+    <!-- PROMOS -->
+    <section class="section" style="padding-top:0">
+      <div class="container promos">
+        <a class="promo" id="promoA" href="shop.html?char=assembly" data-reveal><div class="bg"><img alt="" loading="lazy"></div><span class="eyebrow">Team collection</span><h3>The Assembly</h3><p>Rings, line-ups and city skylines. Stronger together.</p><span class="link-u">Shop the team →</span></a>
+        <a class="promo" id="promoB" href="shop.html?s=sale" data-reveal><div class="bg"><img alt="" loading="lazy"></div><span class="eyebrow">Limited time</span><h3>Sale up to <span class="metal-red">30% off</span></h3><p>Select heroes, marked down while stock lasts.</p><span class="link-u">Shop the sale →</span></a>
+      </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="section" id="best" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Fan favourites</span><h2 class="display">Best Sellers</h2></div>
+          <a class="link-u" href="shop.html?s=best">View all best sellers <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid" id="bestGrid"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal><div><span class="eyebrow">Crew talk</span><h2 class="display">What the squad says</h2></div></div>
+        <div class="reviews-grid">
+          <div class="review" data-reveal><span class="stars">★★★★★</span><p>The print quality is unreal — the Core Reactor tee looks even better in person and the cotton is properly heavy.</p><cite>Demo reviewer · A.</cite></div>
+          <div class="review" data-reveal><span class="stars">★★★★★</span><p>Oversized fit is perfect. The back print on the street tee gets compliments every single time.</p><cite>Demo reviewer · J.</cite></div>
+          <div class="review" data-reveal><span class="stars">★★★★☆</span><p>Fast shipping, great packaging. The cinematic tee is my new favourite — sizing runs true.</p><cite>Demo reviewer · M.</cite></div>
+        </div>
+        <p class="demo-note">Sample reviews for this demo store — placeholder content, not from real customers.</p>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section newsletter" id="newsletter">
+      <div class="container">
+        <div><h2 class="display" data-lines>Join the<br>Initiative</h2><p>Get 10% off your first order, plus first access to new drops.</p></div>
+        <div><form class="news-form" id="newsForm" novalidate><input type="email" id="newsEmail" placeholder="Your email address" aria-label="Email address" required><button type="submit">Join</button></form><div class="news-msg" id="newsMsg" role="status"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
